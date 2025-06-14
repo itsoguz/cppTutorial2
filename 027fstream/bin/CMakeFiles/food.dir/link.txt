@@ -1,0 +1,1 @@
+/usr/bin/clang++ -Xlinker --dependency-file=CMakeFiles/food.dir/link.d CMakeFiles/food.dir/src/Food.cpp.o CMakeFiles/food.dir/src/main.cpp.o -o food
