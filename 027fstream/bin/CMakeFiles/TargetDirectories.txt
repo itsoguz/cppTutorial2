@@ -1,3 +1,0 @@
-/home/oguz/dev/cppTutorial2/027fstream/bin/CMakeFiles/food.dir
-/home/oguz/dev/cppTutorial2/027fstream/bin/CMakeFiles/edit_cache.dir
-/home/oguz/dev/cppTutorial2/027fstream/bin/CMakeFiles/rebuild_cache.dir
