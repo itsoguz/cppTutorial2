@@ -11,8 +11,7 @@ int main()
 {
     //	Create a socket
     int sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock == -1)
-    {
+    if (sock == -1){
         return 1;
     }
 
@@ -27,8 +26,7 @@ int main()
 
     //	Connect to the server on the socket
     int connectRes = connect(sock, reinterpret_cast<sockaddr*>(&hint), sizeof(hint));
-    if (connectRes == -1)
-    {
+    if (connectRes == -1){
         return 1;
     }
 
@@ -43,8 +41,7 @@ int main()
 
         //		Send to server
         int sendRes = send(sock, userInput.c_str(), userInput.size() + 1, 0);
-        if (sendRes == -1)
-        {
+        if (sendRes == -1){
             std::cout << "Could not send to server! Whoops!\r\n";
             continue;
         }
@@ -52,12 +49,10 @@ int main()
         //		Wait for response
         memset(buf, 0, 4096);
         int bytesReceived = recv(sock, buf, 4096, 0);
-        if (bytesReceived == -1)
-        {
+        if (bytesReceived == -1){
             std::cout << "There was an error getting response from server\r\n";
         }
-        else
-        {
+        else{
             //		Display response
             std::cout << "SERVER> " << std::string(buf, bytesReceived) << "\r\n";
         }
