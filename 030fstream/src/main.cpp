@@ -7,13 +7,13 @@
 
 static std::deque<Food> contFoods;
 
-void initializeFoods(){
+void initializeFoods(){				// No need to use this function
 	std::ofstream oFile("foods.txt");	// outputFile
 	oFile << "lemon 1.5 cheese 1.1 pie 2.4 pizza 6.0";
 	oFile.close();
 }
 
-int initialImport(){
+int initialImport(){				// No need to use this function
 	std::ifstream iFile("foods.txt");	// inputFile
 	
 	//std::deque<Food> contFoods;	// containerFoods
@@ -38,11 +38,21 @@ int initialImport(){
 }
 
 int main(){
-	initializeFoods();
-	initialImport();
+	//initializeFoods();
+	//initialImport();
+	
+	std::ifstream iFile("foods.txt");
+	if (iFile.is_open()) {
+		importContainer(contFoods, iFile);
+		iFile.close();
+	} else {
+		std::cerr << "Error opening file: foods.txt" << std::endl;
+		return -1;
+	}
+	
 	std::cout << "Program started with initial shopping list:" << std::endl;
 	printContainer(contFoods);
-	
+
 	Food tmpFood;
 	int response = 0;
 	while (response != -1 && response != -2) {
@@ -98,3 +108,4 @@ int main(){
 	}
 	return 0;
 }
+

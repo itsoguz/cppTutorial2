@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(food2 VERSION 1.0)
+project(ShoppingList VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -13,3 +13,4 @@ file(GLOB PROJECT_SOURCES "${SOURCE_DIR}/*.cpp")
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
